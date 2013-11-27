@@ -224,8 +224,13 @@ get_session = function(session) {
       var session = [0,session].join('');
     }
 
-    var session_increase = 2
+    var session_increase = 0.2
     var sesh = parseFloat(session) + session_increase;
+    if (session === "NaN")
+        {
+          var session = '0.00';
+        }
+
     var sesh = sesh.toFixed(2) + "%";
     document.getElementById('my_sesh').innerHTML = sesh;
 }
